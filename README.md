@@ -1,0 +1,15 @@
+docker compose -f .\db\docker-compose.yml up
+
+java -jar .\jhipster-registry\target\jhipster-registry-7.5.0.jar
+
+java -jar .\be-services\gateway\target\gateway-0.0.1-SNAPSHOT.jar
+
+java -jar .\be-services\bookingService\target\booking-service-0.0.1-SNAPSHOT.jar
+
+java -jar .\be-services\eventService\target\event-service-0.0.1-SNAPSHOT.jar
+
+java -jar .\be-services\notificationService\target\notification-service-0.0.1-SNAPSHOT.jar
+
+java -jar .\be-services\paymentService\target\payment-service-0.0.1-SNAPSHOT.jar
+
+java -jar .\be-services\ticketService\target\ticket-service-0.0.1-SNAPSHOT.jar
