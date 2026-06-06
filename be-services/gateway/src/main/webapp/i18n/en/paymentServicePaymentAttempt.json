@@ -1,0 +1,36 @@
+{
+  "gatewayApp": {
+    "paymentServicePaymentAttempt": {
+      "home": {
+        "title": "Payment Attempts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Payment Attempt",
+        "createOrEditLabel": "Create or edit a Payment Attempt",
+        "notFound": "No Payment Attempts found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Payment Attempt {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Attempt"
+      },
+      "id": "ID",
+      "provider": "Provider",
+      "providerCheckoutSessionId": "Provider Checkout Session Id",
+      "providerPaymentId": "Provider Payment Id",
+      "checkoutUrl": "Checkout Url",
+      "status": "Status",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "webhookLogs": "Webhook Logs",
+      "payment": "Payment"
+    }
+  },
+  "paymentServiceApp": {
+    "paymentServicePaymentAttempt": {
+      "created": "A new Payment Attempt is created with identifier {{ param }}",
+      "updated": "A Payment Attempt is updated with identifier {{ param }}",
+      "deleted": "A Payment Attempt is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "annotations": {
+    "changelogDate": "20260606054147"
+  },
+  "applications": ["gateway", "paymentService"],
+  "clientRootFolder": "paymentService",
+  "databaseType": "sql",
+  "documentation": "Payment Webhook Log — lưu raw webhook từ gateway\\npayment_id, payment_attempt_id có thể nullable",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "provider",
+      "fieldType": "PaymentProvider",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "STRIPE,VNPAY"
+    },
+    {
+      "fieldName": "providerEventId",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "512"
+    },
+    {
+      "fieldName": "eventType",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "rawPayload",
+      "fieldType": "TextBlob",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "signature",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1024"
+    },
+    {
+      "fieldName": "processed",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "processingError",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "receivedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "processedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "microserviceName": "paymentService",
+  "name": "PaymentWebhookLog",
+  "relationships": [
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "webhookLogs",
+      "relationshipName": "payment",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "paymentAttempt",
+      "otherEntityRelationshipName": "webhookLogs",
+      "relationshipName": "attempt",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "changelogDate": "20260606053647"
+  },
+  "applications": ["gateway", "bookingService"],
+  "clientRootFolder": "bookingService",
+  "databaseType": "sql",
+  "documentation": "Booking Status History — lịch sử đổi trạng thái",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "oldStatus",
+      "fieldType": "BookingStatus",
+      "fieldValues": "PENDING_PAYMENT,PAID,PAYMENT_FAILED,CANCELLED,EXPIRED"
+    },
+    {
+      "fieldName": "newStatus",
+      "fieldType": "BookingStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDING_PAYMENT,PAID,PAYMENT_FAILED,CANCELLED,EXPIRED"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "bookingService",
+  "name": "BookingStatusHistory",
+  "relationships": [
+    {
+      "otherEntityName": "booking",
+      "otherEntityRelationshipName": "statusHistories",
+      "relationshipName": "booking",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

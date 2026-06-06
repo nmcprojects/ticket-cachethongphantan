@@ -1,0 +1,35 @@
+{
+  "gatewayApp": {
+    "notificationServiceNotificationInboxEvent": {
+      "home": {
+        "title": "Notification Inbox Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Notification Inbox Event",
+        "createOrEditLabel": "Create or edit a Notification Inbox Event",
+        "notFound": "No Notification Inbox Events found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Notification Inbox Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Notification Inbox Event"
+      },
+      "id": "ID",
+      "sourceService": "Source Service",
+      "eventId": "Event Id",
+      "eventType": "Event Type",
+      "payload": "Payload",
+      "status": "Status",
+      "receivedAt": "Received At",
+      "processedAt": "Processed At",
+      "errorMessage": "Error Message"
+    }
+  },
+  "notificationServiceApp": {
+    "notificationServiceNotificationInboxEvent": {
+      "created": "A new Notification Inbox Event is created with identifier {{ param }}",
+      "updated": "A Notification Inbox Event is updated with identifier {{ param }}",
+      "deleted": "A Notification Inbox Event is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "gatewayApp": {
+    "TicketTypeStatus": {
+      "null": "",
+      "SELLING": "SELLING",
+      "SOLD_OUT": "SOLD_OUT",
+      "DISABLED": "DISABLED"
+    }
+  }
+}

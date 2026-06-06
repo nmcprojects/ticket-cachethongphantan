@@ -1,0 +1,11 @@
+id;source_service;event_id;event_type;payload;status;received_at;processed_at;error_message
+1;seal;whereas;that;../fake-data/blob/hipster.txt;FAILED;2026-06-05T18:48:14;2026-06-05T06:18:16;toaster monocle
+2;an thankfully skyline;drat powerfully;because;../fake-data/blob/hipster.txt;RECEIVED;2026-06-05T13:58:59;2026-06-05T16:05:58;term ack inasmuch
+3;airbrush slope animated;meh inasmuch ah;unless to incidentally;../fake-data/blob/hipster.txt;RECEIVED;2026-06-05T15:06:28;2026-06-06T04:46:30;below
+4;indeed;aboard oh;gah but;../fake-data/blob/hipster.txt;PROCESSED;2026-06-05T16:04:21;2026-06-06T01:30:03;quaintly truly vain
+5;well-off grandson;sailor creator blissfully;mmm;../fake-data/blob/hipster.txt;FAILED;2026-06-06T03:47:59;2026-06-05T12:32:59;under
+6;when pink;tense over;of cute qualified;../fake-data/blob/hipster.txt;RECEIVED;2026-06-05T11:30:26;2026-06-05T18:25:49;pilot
+7;horn until;fantastic duh;crazy;../fake-data/blob/hipster.txt;FAILED;2026-06-05T07:16:06;2026-06-05T15:49:23;aw
+8;unfortunate;up;psst;../fake-data/blob/hipster.txt;RECEIVED;2026-06-05T20:50:34;2026-06-05T22:02:35;palate but yahoo
+9;plus;flight skateboard;t-shirt;../fake-data/blob/hipster.txt;RECEIVED;2026-06-06T01:48:16;2026-06-05T11:34:30;er foot till
+10;psst flimsy creature;hunt although shadowy;hyphenation devil;../fake-data/blob/hipster.txt;RECEIVED;2026-06-05T17:44:22;2026-06-05T12:20:16;uselessly annually oh

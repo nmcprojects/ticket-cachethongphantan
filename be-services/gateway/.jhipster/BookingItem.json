@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "changelogDate": "20260606053547"
+  },
+  "applications": ["gateway", "bookingService"],
+  "clientRootFolder": "bookingService",
+  "databaseType": "sql",
+  "documentation": "Booking Item — chi tiết vé trong đơn\\nticket_type_id -> event_db.ticket_types.id (logical)\\nsnapshot: ticketTypeName, unitPrice tại thời điểm mua",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "ticketTypeId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ticketTypeName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "unitPrice",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "bookingService",
+  "name": "BookingItem",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "booking",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "booking",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

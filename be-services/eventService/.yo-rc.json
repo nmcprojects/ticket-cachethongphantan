@@ -1,0 +1,27 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 1,
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "eventService",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": true,
+    "entities": ["OrganizerProfile", "Event", "TicketType", "TicketReservation"],
+    "gatewayServerPort": "9000",
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "OTViY2RlOTdkM2RkYjRlODYxODAxMjRmZmE2YjNlNmQxODc5MGZmNDQ1YWFjYmMyZDViYjZjYTljZDY4MTRiYWRmOGM2MzBhYTg1ZWM0MzIwZDRhN2ExZjhjYjgwZWFjZmNiMjM1ZDYyNjJlZjUxN2JmMDg0YjlmZGJmNTEzODg=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1780724025000,
+    "nativeLanguage": "en",
+    "packageName": "com.ticketbooking.event",
+    "prodDatabaseType": "mysql",
+    "serverPort": "9002",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

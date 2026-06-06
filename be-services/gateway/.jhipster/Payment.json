@@ -1,0 +1,81 @@
+{
+  "annotations": {
+    "changelogDate": "20260606053947"
+  },
+  "applications": ["gateway", "paymentService"],
+  "clientRootFolder": "paymentService",
+  "databaseType": "sql",
+  "documentation": "Payment — một giao dịch thanh toán\\nbooking_id -> booking_db.bookings.id (logical)\\nuser_id    -> auth_db.users.id (logical)",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "bookingId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PaymentStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDING,SUCCESS,FAILED,EXPIRED,CANCELLED"
+    },
+    {
+      "fieldName": "paidAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "failedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "expiredAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "microserviceName": "paymentService",
+  "name": "Payment",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "paymentAttempt",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "attempts",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "paymentWebhookLog",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "webhookLogs",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,34 @@
+{
+  "gatewayApp": {
+    "eventServiceOrganizerProfile": {
+      "home": {
+        "title": "Organizer Profiles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Organizer Profile",
+        "createOrEditLabel": "Create or edit a Organizer Profile",
+        "notFound": "No Organizer Profiles found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Organizer Profile {{ id }}?"
+      },
+      "detail": {
+        "title": "Organizer Profile"
+      },
+      "id": "ID",
+      "authUserId": "Auth User Id",
+      "organizationName": "Organization Name",
+      "contactEmail": "Contact Email",
+      "contactPhone": "Contact Phone",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "events": "Events"
+    }
+  },
+  "eventServiceApp": {
+    "eventServiceOrganizerProfile": {
+      "created": "A new Organizer Profile is created with identifier {{ param }}",
+      "updated": "A Organizer Profile is updated with identifier {{ param }}",
+      "deleted": "A Organizer Profile is deleted with identifier {{ param }}"
+    }
+  }
+}

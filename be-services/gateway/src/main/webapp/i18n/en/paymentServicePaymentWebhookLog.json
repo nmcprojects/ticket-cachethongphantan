@@ -1,0 +1,38 @@
+{
+  "gatewayApp": {
+    "paymentServicePaymentWebhookLog": {
+      "home": {
+        "title": "Payment Webhook Logs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Payment Webhook Log",
+        "createOrEditLabel": "Create or edit a Payment Webhook Log",
+        "notFound": "No Payment Webhook Logs found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Payment Webhook Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Webhook Log"
+      },
+      "id": "ID",
+      "provider": "Provider",
+      "providerEventId": "Provider Event Id",
+      "eventType": "Event Type",
+      "rawPayload": "Raw Payload",
+      "signature": "Signature",
+      "processed": "Processed",
+      "processingError": "Processing Error",
+      "receivedAt": "Received At",
+      "processedAt": "Processed At",
+      "payment": "Payment",
+      "attempt": "Attempt"
+    }
+  },
+  "paymentServiceApp": {
+    "paymentServicePaymentWebhookLog": {
+      "created": "A new Payment Webhook Log is created with identifier {{ param }}",
+      "updated": "A Payment Webhook Log is updated with identifier {{ param }}",
+      "deleted": "A Payment Webhook Log is deleted with identifier {{ param }}"
+    }
+  }
+}

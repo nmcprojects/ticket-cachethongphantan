@@ -1,0 +1,73 @@
+{
+  "annotations": {
+    "changelogDate": "20260606054047"
+  },
+  "applications": ["gateway", "paymentService"],
+  "clientRootFolder": "paymentService",
+  "databaseType": "sql",
+  "documentation": "Payment Attempt — mỗi lần thử thanh toán qua gateway",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "provider",
+      "fieldType": "PaymentProvider",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "STRIPE,VNPAY"
+    },
+    {
+      "fieldName": "providerCheckoutSessionId",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "512"
+    },
+    {
+      "fieldName": "providerPaymentId",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "512"
+    },
+    {
+      "fieldName": "checkoutUrl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2048"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PaymentAttemptStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDING,SUCCESS,FAILED,CANCELLED"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "microserviceName": "paymentService",
+  "name": "PaymentAttempt",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "paymentWebhookLog",
+      "otherEntityRelationshipName": "attempt",
+      "relationshipName": "webhookLogs",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "attempts",
+      "relationshipName": "payment",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

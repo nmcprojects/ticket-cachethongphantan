@@ -1,0 +1,11 @@
+id;name;description;price;currency;total_quantity;available_quantity;reserved_quantity;sold_quantity;max_per_order;status;created_at;updated_at;event_id
+1;sheepishly;babyish;15216.88;jell bewai;12219;8592;9905;27225;26514;SELLING;2026-06-05T22:54:26;2026-06-05T06:12:01;1
+2;apropos armoire editor;puzzled turret afore;7623.98;as scrape ;31214;5091;8391;25290;300;DISABLED;2026-06-05T17:04:33;2026-06-05T09:18:40;2
+3;comb aside;ride;8662.57;so drat su;2010;2560;31433;26699;30036;SOLD_OUT;2026-06-06T02:53:54;2026-06-05T10:04:22;3
+4;seemingly geez save;veg;24309.54;so pish;10849;7100;14791;32665;29325;SELLING;2026-06-06T03:35:28;2026-06-06T00:59:54;4
+5;nearly sunbeam within;deliberately with;28980;gah;13076;16050;13615;17602;9036;SOLD_OUT;2026-06-05T09:40:25;2026-06-05T23:28:24;5
+6;overconfidently but;lest meaningfully;12752.96;ferociousl;9948;557;15029;9389;181;DISABLED;2026-06-05T21:00:11;2026-06-05T18:20:38;6
+7;phew misread gah;sure-footed valiantly;12996.09;afore aw n;17739;23900;24701;1307;5132;SELLING;2026-06-05T22:53:36;2026-06-05T22:43:19;7
+8;outside fondly;questionably innocently crushing;8986.8;publicatio;10838;22854;9045;22954;5378;SOLD_OUT;2026-06-06T02:52:49;2026-06-05T14:43:08;8
+9;another;huzzah;7534.52;potentiall;17246;5427;22760;7299;24869;DISABLED;2026-06-05T13:59:17;2026-06-06T01:27:13;9
+10;fiercely;zowie absent;12613.98;solidly;5951;26556;7892;26485;20106;SELLING;2026-06-05T13:36:41;2026-06-06T02:24:07;10

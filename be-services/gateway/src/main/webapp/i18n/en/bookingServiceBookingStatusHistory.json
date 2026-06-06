@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "bookingServiceBookingStatusHistory": {
+      "home": {
+        "title": "Booking Status Histories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Booking Status History",
+        "createOrEditLabel": "Create or edit a Booking Status History",
+        "notFound": "No Booking Status Histories found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Booking Status History {{ id }}?"
+      },
+      "detail": {
+        "title": "Booking Status History"
+      },
+      "id": "ID",
+      "oldStatus": "Old Status",
+      "newStatus": "New Status",
+      "reason": "Reason",
+      "createdAt": "Created At",
+      "booking": "Booking"
+    }
+  },
+  "bookingServiceApp": {
+    "bookingServiceBookingStatusHistory": {
+      "created": "A new Booking Status History is created with identifier {{ param }}",
+      "updated": "A Booking Status History is updated with identifier {{ param }}",
+      "deleted": "A Booking Status History is deleted with identifier {{ param }}"
+    }
+  }
+}

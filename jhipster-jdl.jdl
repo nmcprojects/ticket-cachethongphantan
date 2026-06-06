@@ -1,0 +1,617 @@
+// ============================================================
+// TICKET BOOKING SYSTEM — JHipster JDL
+// Microservice Architecture
+// Java + ReactJS | JWT | MySQL | Eureka | Maven
+// ============================================================
+
+// ============================================================
+// APPLICATION DEFINITIONS
+// ============================================================
+
+application {
+  config {
+    baseName gateway
+    applicationType gateway
+    packageName com.ticketbooking.gateway
+    authenticationType jwt
+    clientFramework react
+    enableSwaggerCodegen true
+    serverPort 9000
+    buildTool maven
+    serviceDiscoveryType eureka
+    prodDatabaseType mysql
+    devDatabaseType mysql
+    cacheProvider no
+    enableHibernateCache false
+  }
+
+   entities *
+}
+
+application {
+  config {
+    baseName authService
+    applicationType microservice
+    packageName com.ticketbooking.auth
+    authenticationType jwt
+    enableSwaggerCodegen true
+    serverPort 9001
+    buildTool maven
+    serviceDiscoveryType eureka
+    prodDatabaseType mysql
+    devDatabaseType mysql
+    cacheProvider no
+    enableHibernateCache false
+    databaseType sql
+  }
+}
+
+application {
+  config {
+    baseName eventService
+    applicationType microservice
+    packageName com.ticketbooking.event
+    authenticationType jwt
+    enableSwaggerCodegen true
+    serverPort 9002
+    buildTool maven
+    serviceDiscoveryType eureka
+    prodDatabaseType mysql
+    devDatabaseType mysql
+    cacheProvider no
+    enableHibernateCache false
+    databaseType sql
+  }
+  entities OrganizerProfile, Event, TicketType, TicketReservation
+}
+
+application {
+  config {
+    baseName bookingService
+    applicationType microservice
+    packageName com.ticketbooking.booking
+    authenticationType jwt
+    enableSwaggerCodegen true
+    serverPort 9003
+    buildTool maven
+    serviceDiscoveryType eureka
+    prodDatabaseType mysql
+    devDatabaseType mysql
+    cacheProvider no
+    enableHibernateCache false
+    databaseType sql
+  }
+  entities Booking, BookingItem, BookingStatusHistory, BookingInboxEvent, BookingOutboxEvent
+}
+
+application {
+  config {
+    baseName paymentService
+    applicationType microservice
+    packageName com.ticketbooking.payment
+    authenticationType jwt
+    enableSwaggerCodegen true
+    serverPort 9004
+    buildTool maven
+    serviceDiscoveryType eureka
+    prodDatabaseType mysql
+    devDatabaseType mysql
+    cacheProvider no
+    enableHibernateCache false
+    databaseType sql
+  }
+  entities Payment, PaymentAttempt, PaymentWebhookLog, PaymentOutboxEvent
+}
+
+application {
+  config {
+    baseName ticketService
+    applicationType microservice
+    packageName com.ticketbooking.ticket
+    authenticationType jwt
+    enableSwaggerCodegen true
+    serverPort 9005
+    buildTool maven
+    serviceDiscoveryType eureka
+    prodDatabaseType mysql
+    devDatabaseType mysql
+    cacheProvider no
+    enableHibernateCache false
+    databaseType sql
+  }
+  entities Ticket, CheckinLog, TicketInboxEvent, TicketOutboxEvent
+}
+
+application {
+  config {
+    baseName notificationService
+    applicationType microservice
+    packageName com.ticketbooking.notification
+    authenticationType jwt
+    enableSwaggerCodegen true
+    serverPort 9006
+    buildTool maven
+    serviceDiscoveryType eureka
+    prodDatabaseType mysql
+    devDatabaseType mysql
+    cacheProvider no
+    enableHibernateCache false
+    databaseType sql
+  }
+  entities EmailNotification, EmailNotificationItem, NotificationInboxEvent
+}
+
+// ============================================================
+// ENUMS
+// ============================================================
+
+enum UserStatus {
+  ACTIVE, DISABLED, LOCKED
+}
+
+enum EventStatus {
+  DRAFT, PUBLISHED, CANCELLED, ENDED
+}
+
+enum TicketTypeStatus {
+  SELLING, SOLD_OUT, DISABLED
+}
+
+enum ReservationStatus {
+  HELD, CONFIRMED, RELEASED, EXPIRED
+}
+
+enum BookingStatus {
+  PENDING_PAYMENT, PAID, PAYMENT_FAILED, CANCELLED, EXPIRED
+}
+
+enum PaymentStatus {
+  PENDING, SUCCESS, FAILED, EXPIRED, CANCELLED
+}
+
+enum PaymentProvider {
+  STRIPE, VNPAY
+}
+
+enum PaymentAttemptStatus {
+  PENDING, SUCCESS, FAILED, CANCELLED
+}
+
+enum TicketStatus {
+  ISSUED, CHECKED_IN, CANCELLED
+}
+
+enum CheckinResult {
+  VALID, ALREADY_CHECKED_IN, INVALID_TICKET, CANCELLED_TICKET
+}
+
+enum NotificationStatus {
+  PENDING, SENT, FAILED
+}
+
+enum NotificationProvider {
+  SENDGRID, GMAIL_SMTP
+}
+
+enum EventProcessStatus {
+  RECEIVED, PROCESSED, FAILED
+}
+
+enum OutboxStatus {
+  PENDING, PUBLISHED, FAILED
+}
+
+
+// ============================================================
+// EVENT SERVICE ENTITIES
+// ============================================================
+
+/**
+ * Organizer profile — auth_user_id is logical ref to auth_db.users.id
+ */
+entity OrganizerProfile {
+  authUserId      Long    required
+  organizationName String required maxlength(255)
+  contactEmail    String  required maxlength(255)
+  contactPhone    String  maxlength(20)
+  createdAt       Instant required
+  updatedAt       Instant
+}
+
+/**
+ * Event (sự kiện)
+ */
+entity Event {
+  title           String  required maxlength(500)
+  description     TextBlob
+  location        String  maxlength(500)
+  startTime       Instant required
+  endTime         Instant required
+  bannerUrl       String  maxlength(1024)
+  status          EventStatus required
+  createdAt       Instant required
+  updatedAt       Instant
+}
+
+/**
+ * Ticket Type (loại vé: Standard, VIP, VVIP…)
+ * Inventory rule: totalQuantity = availableQuantity + reservedQuantity + soldQuantity
+ */
+entity TicketType {
+  name              String  required maxlength(255)
+  description       String  maxlength(500)
+  price             BigDecimal required
+  currency          String  required maxlength(10)
+  totalQuantity     Integer required
+  availableQuantity Integer required
+  reservedQuantity  Integer required
+  soldQuantity      Integer required
+  maxPerOrder       Integer required
+  status            TicketTypeStatus required
+  createdAt         Instant required
+  updatedAt         Instant
+}
+
+/**
+ * Ticket Reservation — tạm giữ vé khi customer tạo booking
+ * booking_id is logical ref to booking_db.bookings.id
+ * user_id    is logical ref to auth_db.users.id
+ */
+entity TicketReservation {
+  bookingId       Long    required
+  userId          Long    required
+  quantity        Integer required
+  status          ReservationStatus required
+  expiresAt       Instant required
+  createdAt       Instant required
+  updatedAt       Instant
+}
+
+// ============================================================
+// BOOKING SERVICE ENTITIES
+// ============================================================
+
+/**
+ * Booking (đơn đặt vé)
+ * user_id    -> auth_db.users.id (logical)
+ * event_id   -> event_db.events.id (logical)
+ * payment_id -> payment_db.payments.id (logical)
+ */
+entity Booking {
+  userId          Long    required
+  customerEmail   String  required maxlength(255)
+  eventId         Long    required
+  eventTitle      String  required maxlength(500)
+  totalAmount     BigDecimal required
+  currency        String  required maxlength(10)
+  status          BookingStatus required
+  paymentId       Long
+  paymentUrl      String  maxlength(2048)
+  expiredAt       Instant
+  paidAt          Instant
+  createdAt       Instant required
+  updatedAt       Instant
+}
+
+/**
+ * Booking Item — chi tiết vé trong đơn
+ * ticket_type_id -> event_db.ticket_types.id (logical)
+ * snapshot: ticketTypeName, unitPrice tại thời điểm mua
+ */
+entity BookingItem {
+  ticketTypeId    Long    required
+  ticketTypeName  String  required maxlength(255)
+  quantity        Integer required
+  unitPrice       BigDecimal required
+  totalPrice      BigDecimal required
+  createdAt       Instant required
+}
+
+/**
+ * Booking Status History — lịch sử đổi trạng thái
+ */
+entity BookingStatusHistory {
+  oldStatus       BookingStatus
+  newStatus       BookingStatus required
+  reason          String  maxlength(500)
+  createdAt       Instant required
+}
+
+/**
+ * Inbox Events for Booking Service
+ * Nhận: PaymentSucceeded, PaymentFailed
+ */
+entity BookingInboxEvent {
+  sourceService   String  required maxlength(100)
+  eventId         String  required maxlength(255) unique
+  eventType       String  required maxlength(100)
+  payload         TextBlob required
+  status          EventProcessStatus required
+  receivedAt      Instant required
+  processedAt     Instant
+  errorMessage    String  maxlength(1000)
+}
+
+/**
+ * Outbox Events for Booking Service
+ * Publish: BookingPaid, BookingPaymentFailed, BookingCancelled
+ */
+entity BookingOutboxEvent {
+  aggregateType   String  required maxlength(100)
+  aggregateId     String  required maxlength(255)
+  eventType       String  required maxlength(100)
+  payload         TextBlob required
+  status          OutboxStatus required
+  createdAt       Instant required
+  publishedAt     Instant
+  errorMessage    String  maxlength(1000)
+}
+
+// ============================================================
+// PAYMENT SERVICE ENTITIES
+// ============================================================
+
+/**
+ * Payment — một giao dịch thanh toán
+ * booking_id -> booking_db.bookings.id (logical)
+ * user_id    -> auth_db.users.id (logical)
+ */
+entity Payment {
+  bookingId       Long    required
+  userId          Long    required
+  amount          BigDecimal required
+  currency        String  required maxlength(10)
+  status          PaymentStatus required
+  paidAt          Instant
+  failedAt        Instant
+  expiredAt       Instant
+  createdAt       Instant required
+  updatedAt       Instant
+}
+
+/**
+ * Payment Attempt — mỗi lần thử thanh toán qua gateway
+ */
+entity PaymentAttempt {
+  provider                    PaymentProvider required
+  providerCheckoutSessionId   String  maxlength(512)
+  providerPaymentId           String  maxlength(512)
+  checkoutUrl                 String  maxlength(2048)
+  status                      PaymentAttemptStatus required
+  createdAt                   Instant required
+  updatedAt                   Instant
+}
+
+/**
+ * Payment Webhook Log — lưu raw webhook từ gateway
+ * payment_id, payment_attempt_id có thể nullable
+ */
+entity PaymentWebhookLog {
+  provider            PaymentProvider required
+  providerEventId     String  maxlength(512)
+  eventType           String  maxlength(255)
+  rawPayload          TextBlob required
+  signature           String  maxlength(1024)
+  processed           Boolean required
+  processingError     String  maxlength(1000)
+  receivedAt          Instant required
+  processedAt         Instant
+}
+
+/**
+ * Outbox Events for Payment Service
+ * Publish: PaymentSucceeded, PaymentFailed, PaymentExpired
+ */
+entity PaymentOutboxEvent {
+  aggregateType   String  required maxlength(100)
+  aggregateId     String  required maxlength(255)
+  eventType       String  required maxlength(100)
+  payload         TextBlob required
+  status          OutboxStatus required
+  createdAt       Instant required
+  publishedAt     Instant
+  errorMessage    String  maxlength(1000)
+}
+
+// ============================================================
+// TICKET SERVICE ENTITIES
+// ============================================================
+
+/**
+ * Ticket — vé điện tử
+ * booking_id      -> booking_db.bookings.id (logical)
+ * booking_item_id -> booking_db.booking_items.id (logical)
+ * user_id         -> auth_db.users.id (logical)
+ * event_id        -> event_db.events.id (logical)
+ * ticket_type_id  -> event_db.ticket_types.id (logical)
+ * snapshot: customerEmail, eventTitle, ticketTypeName
+ */
+entity Ticket {
+  bookingId       Long    required
+  bookingItemId   Long    required
+  userId          Long    required
+  customerEmail   String  required maxlength(255)
+  eventId         Long    required
+  eventTitle      String  required maxlength(500)
+  ticketTypeId    Long    required
+  ticketTypeName  String  required maxlength(255)
+  ticketCode      String  required maxlength(100) unique
+  qrPayload       String  required maxlength(2048)
+  status          TicketStatus required
+  issuedAt        Instant required
+  checkedInAt     Instant
+  createdAt       Instant required
+  updatedAt       Instant
+}
+
+/**
+ * Checkin Log — lịch sử check-in
+ * ticket_id nullable (log cả lần thất bại với mã không tồn tại)
+ * staff_id  -> auth_db.users.id (logical)
+ * event_id  -> event_db.events.id (logical)
+ */
+entity CheckinLog {
+  ticketCode      String  required maxlength(100)
+  staffId         Long    required
+  eventId         Long    required
+  result          CheckinResult required
+  message         String  maxlength(500)
+  checkedInAt     Instant required
+}
+
+/**
+ * Inbox Events for Ticket Service
+ * Nhận: BookingPaid
+ */
+entity TicketInboxEvent {
+  sourceService   String  required maxlength(100)
+  eventId         String  required maxlength(255) unique
+  eventType       String  required maxlength(100)
+  payload         TextBlob required
+  status          EventProcessStatus required
+  receivedAt      Instant required
+  processedAt     Instant
+  errorMessage    String  maxlength(1000)
+}
+
+/**
+ * Outbox Events for Ticket Service
+ * Publish: TicketIssued, TicketCheckedIn
+ */
+entity TicketOutboxEvent {
+  aggregateType   String  required maxlength(100)
+  aggregateId     String  required maxlength(255)
+  eventType       String  required maxlength(100)
+  payload         TextBlob required
+  status          OutboxStatus required
+  createdAt       Instant required
+  publishedAt     Instant
+  errorMessage    String  maxlength(1000)
+}
+
+// ============================================================
+// NOTIFICATION SERVICE ENTITIES
+// ============================================================
+
+/**
+ * Email Notification — một lần gửi email cho user
+ * user_id    -> auth_db.users.id (logical)
+ * booking_id -> booking_db.bookings.id (logical)
+ */
+entity EmailNotification {
+  userId              Long    required
+  bookingId           Long    required
+  recipientEmail      String  required maxlength(255)
+  subject             String  required maxlength(500)
+  content             TextBlob required
+  provider            NotificationProvider required
+  status              NotificationStatus required
+  providerMessageId   String  maxlength(512)
+  errorMessage        String  maxlength(1000)
+  sentAt              Instant
+  createdAt           Instant required
+  updatedAt           Instant
+}
+
+/**
+ * Email Notification Item — từng vé gắn trong email
+ * ticket_id -> ticket_db.tickets.id (logical)
+ */
+entity EmailNotificationItem {
+  ticketId            Long    required
+  ticketCode          String  required maxlength(100)
+  createdAt           Instant required
+}
+
+/**
+ * Inbox Events for Notification Service
+ * Nhận: TicketIssued
+ */
+entity NotificationInboxEvent {
+  sourceService   String  required maxlength(100)
+  eventId         String  required maxlength(255) unique
+  eventType       String  required maxlength(100)
+  payload         TextBlob required
+  status          EventProcessStatus required
+  receivedAt      Instant required
+  processedAt     Instant
+  errorMessage    String  maxlength(1000)
+}
+
+// ============================================================
+// RELATIONSHIPS
+// ============================================================
+
+// --- EVENT SERVICE ---
+relationship OneToMany {
+  OrganizerProfile{events} to Event{organizer required}
+  Event{ticketTypes} to TicketType{event required}
+  TicketType{reservations} to TicketReservation{ticketType required}
+}
+
+// --- BOOKING SERVICE ---
+relationship OneToMany {
+  Booking{items} to BookingItem{booking required}
+  Booking{statusHistories} to BookingStatusHistory{booking required}
+}
+
+// --- PAYMENT SERVICE ---
+relationship OneToMany {
+  Payment{attempts} to PaymentAttempt{payment required}
+  Payment{webhookLogs} to PaymentWebhookLog{payment}
+  PaymentAttempt{webhookLogs} to PaymentWebhookLog{attempt}
+}
+
+// --- TICKET SERVICE ---
+relationship OneToMany {
+  Ticket{checkinLogs} to CheckinLog{ticket}
+}
+
+// --- NOTIFICATION SERVICE ---
+relationship OneToMany {
+  EmailNotification{items} to EmailNotificationItem{notification required}
+}
+
+// ============================================================
+// SERVICE LAYER
+// ============================================================
+
+service OrganizerProfile, Event, TicketType, TicketReservation with serviceClass
+service Booking, BookingItem, BookingStatusHistory with serviceClass
+service BookingInboxEvent, BookingOutboxEvent with serviceClass
+service Payment, PaymentAttempt, PaymentWebhookLog, PaymentOutboxEvent with serviceClass
+service Ticket, CheckinLog, TicketInboxEvent, TicketOutboxEvent with serviceClass
+service EmailNotification, EmailNotificationItem, NotificationInboxEvent with serviceClass
+
+// ============================================================
+// PAGINATION
+// ============================================================
+
+paginate Event, TicketType, OrganizerProfile with pagination
+paginate Booking, BookingItem with pagination
+paginate Payment, PaymentAttempt with pagination
+paginate Ticket with pagination
+paginate EmailNotification with pagination
+
+// ============================================================
+// DTO
+// ============================================================
+
+dto * with mapstruct
+
+// ============================================================
+// MICROSERVICE MAPPING
+// ============================================================
+
+microservice OrganizerProfile, Event, TicketType, TicketReservation with eventService
+microservice Booking, BookingItem, BookingStatusHistory, BookingInboxEvent, BookingOutboxEvent with bookingService
+microservice Payment, PaymentAttempt, PaymentWebhookLog, PaymentOutboxEvent with paymentService
+microservice Ticket, CheckinLog, TicketInboxEvent, TicketOutboxEvent with ticketService
+microservice EmailNotification, EmailNotificationItem, NotificationInboxEvent with notificationService
+
+// ============================================================
+// SEARCH (optional — bật nếu muốn dùng Elasticsearch)
+// ============================================================
+// search Event, TicketType with elasticsearch
+// search Booking with elasticsearch
+// search Ticket with elasticsearch

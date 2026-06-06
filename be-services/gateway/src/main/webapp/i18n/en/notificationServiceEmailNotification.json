@@ -1,0 +1,40 @@
+{
+  "gatewayApp": {
+    "notificationServiceEmailNotification": {
+      "home": {
+        "title": "Email Notifications",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Email Notification",
+        "createOrEditLabel": "Create or edit a Email Notification",
+        "notFound": "No Email Notifications found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Email Notification {{ id }}?"
+      },
+      "detail": {
+        "title": "Email Notification"
+      },
+      "id": "ID",
+      "userId": "User Id",
+      "bookingId": "Booking Id",
+      "recipientEmail": "Recipient Email",
+      "subject": "Subject",
+      "content": "Content",
+      "provider": "Provider",
+      "status": "Status",
+      "providerMessageId": "Provider Message Id",
+      "errorMessage": "Error Message",
+      "sentAt": "Sent At",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "items": "Items"
+    }
+  },
+  "notificationServiceApp": {
+    "notificationServiceEmailNotification": {
+      "created": "A new Email Notification is created with identifier {{ param }}",
+      "updated": "A Email Notification is updated with identifier {{ param }}",
+      "deleted": "A Email Notification is deleted with identifier {{ param }}"
+    }
+  }
+}

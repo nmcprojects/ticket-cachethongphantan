@@ -1,0 +1,182 @@
+version: '3.8'
+
+services:
+  # ============================================================
+  # MYSQL — 1 instance, nhiều database
+  # ============================================================
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-ppassword']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - jhipster-network
+
+  # ============================================================
+  # JHIPSTER REGISTRY (Eureka + Spring Cloud Config)
+  # ============================================================
+  # jhipster-registry:
+  #   image: eclipse-temurin:17-jre
+  #   container_name: jhipster-registry
+  #   ports:
+  #     - '8761:8761'
+  #   command: java -jar /app/app.jar
+  #   volumes:
+  #     - ./jhipster-registry/target/jhipster-registry-7.5.0.jar:/app/app.jar
+  #   healthcheck:
+  #     test: ['CMD', 'curl', '-f', 'http://localhost:8761/management/health']
+  #     interval: 15s
+  #     timeout: 5s
+  #     retries: 10
+  #   networks:
+  #     - jhipster-network
+  jhipster-registry:
+    image: jhipster/jhipster-registry:v7.5.0
+    container_name: jhipster-registry
+    ports:
+      - '8761:8761'
+    volumes:
+      - ./jhipster-registry/central-config:/central-config
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:8761/management/health']
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    networks:
+      - jhipster-network
+
+  # ============================================================
+  # GATEWAY (port 9000)
+  # ============================================================
+  gateway:
+    container_name: gateway
+    image: eclipse-temurin:17-jre
+    working_dir: /app
+    volumes:
+      - ./be-services/gateway/target/gateway-0.0.1-SNAPSHOT.jar:/app/app.jar
+    ports:
+      - '9000:9000'
+    command: java -jar /app/app.jar
+    depends_on:
+      mysql:
+        condition: service_healthy
+      jhipster-registry:
+        condition: service_healthy
+    networks:
+      - jhipster-network
+
+  # ============================================================
+  # EVENT SERVICE (port 9002)
+  # ============================================================
+  event-service:
+    container_name: event-service
+    image: eclipse-temurin:17-jre
+    working_dir: /app
+    volumes:
+      - ./be-services/eventService/target/event-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    ports:
+      - '9002:9002'
+    command: java -jar /app/app.jar
+    depends_on:
+      mysql:
+        condition: service_healthy
+      jhipster-registry:
+        condition: service_healthy
+    networks:
+      - jhipster-network
+
+  # ============================================================
+  # BOOKING SERVICE (port 9003)
+  # ============================================================
+  booking-service:
+    container_name: booking-service
+    image: eclipse-temurin:17-jre
+    working_dir: /app
+    volumes:
+      - ./be-services/bookingService/target/booking-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    ports:
+      - '9003:9003'
+    command: java -jar /app/app.jar
+    depends_on:
+      mysql:
+        condition: service_healthy
+      jhipster-registry:
+        condition: service_healthy
+    networks:
+      - jhipster-network
+
+  # ============================================================
+  # PAYMENT SERVICE (port 9004)
+  # ============================================================
+  payment-service:
+    container_name: payment-service
+    image: eclipse-temurin:17-jre
+    working_dir: /app
+    volumes:
+      - ./be-services/paymentService/target/payment-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    ports:
+      - '9004:9004'
+    command: java -jar /app/app.jar
+    depends_on:
+      mysql:
+        condition: service_healthy
+      jhipster-registry:
+        condition: service_healthy
+    networks:
+      - jhipster-network
+
+  # ============================================================
+  # TICKET SERVICE (port 9005)
+  # ============================================================
+  ticket-service:
+    container_name: ticket-service
+    image: eclipse-temurin:17-jre
+    working_dir: /app
+    volumes:
+      - ./be-services/ticketService/target/ticket-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    ports:
+      - '9005:9005'
+    command: java -jar /app/app.jar
+    depends_on:
+      mysql:
+        condition: service_healthy
+      jhipster-registry:
+        condition: service_healthy
+    networks:
+      - jhipster-network
+
+  # ============================================================
+  # NOTIFICATION SERVICE (port 9006)
+  # ============================================================
+  notification-service:
+    container_name: notification-service
+    image: eclipse-temurin:17-jre
+    working_dir: /app
+    volumes:
+      - ./be-services/notificationService/target/notification-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    ports:
+      - '9006:9006'
+    command: java -jar /app/app.jar
+    depends_on:
+      mysql:
+        condition: service_healthy
+      jhipster-registry:
+        condition: service_healthy
+    networks:
+      - jhipster-network
+
+volumes:
+  mysql_data:
+
+networks:
+  jhipster-network:
+    driver: bridge

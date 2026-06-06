@@ -1,0 +1,41 @@
+{
+  "gatewayApp": {
+    "eventServiceTicketType": {
+      "home": {
+        "title": "Ticket Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ticket Type",
+        "createOrEditLabel": "Create or edit a Ticket Type",
+        "notFound": "No Ticket Types found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Ticket Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Ticket Type"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "price": "Price",
+      "currency": "Currency",
+      "totalQuantity": "Total Quantity",
+      "availableQuantity": "Available Quantity",
+      "reservedQuantity": "Reserved Quantity",
+      "soldQuantity": "Sold Quantity",
+      "maxPerOrder": "Max Per Order",
+      "status": "Status",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "reservations": "Reservations",
+      "event": "Event"
+    }
+  },
+  "eventServiceApp": {
+    "eventServiceTicketType": {
+      "created": "A new Ticket Type is created with identifier {{ param }}",
+      "updated": "A Ticket Type is updated with identifier {{ param }}",
+      "deleted": "A Ticket Type is deleted with identifier {{ param }}"
+    }
+  }
+}

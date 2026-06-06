@@ -1,0 +1,42 @@
+{
+  "gatewayApp": {
+    "bookingServiceBooking": {
+      "home": {
+        "title": "Bookings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Booking",
+        "createOrEditLabel": "Create or edit a Booking",
+        "notFound": "No Bookings found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Booking {{ id }}?"
+      },
+      "detail": {
+        "title": "Booking"
+      },
+      "id": "ID",
+      "userId": "User Id",
+      "customerEmail": "Customer Email",
+      "eventId": "Event Id",
+      "eventTitle": "Event Title",
+      "totalAmount": "Total Amount",
+      "currency": "Currency",
+      "status": "Status",
+      "paymentId": "Payment Id",
+      "paymentUrl": "Payment Url",
+      "expiredAt": "Expired At",
+      "paidAt": "Paid At",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "items": "Items",
+      "statusHistories": "Status Histories"
+    }
+  },
+  "bookingServiceApp": {
+    "bookingServiceBooking": {
+      "created": "A new Booking is created with identifier {{ param }}",
+      "updated": "A Booking is updated with identifier {{ param }}",
+      "deleted": "A Booking is deleted with identifier {{ param }}"
+    }
+  }
+}

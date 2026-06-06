@@ -1,0 +1,10 @@
+{
+  "gatewayApp": {
+    "TicketStatus": {
+      "null": "",
+      "ISSUED": "ISSUED",
+      "CHECKED_IN": "CHECKED_IN",
+      "CANCELLED": "CANCELLED"
+    }
+  }
+}

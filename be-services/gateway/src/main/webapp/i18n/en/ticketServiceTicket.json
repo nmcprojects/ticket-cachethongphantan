@@ -1,0 +1,43 @@
+{
+  "gatewayApp": {
+    "ticketServiceTicket": {
+      "home": {
+        "title": "Tickets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ticket",
+        "createOrEditLabel": "Create or edit a Ticket",
+        "notFound": "No Tickets found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Ticket {{ id }}?"
+      },
+      "detail": {
+        "title": "Ticket"
+      },
+      "id": "ID",
+      "bookingId": "Booking Id",
+      "bookingItemId": "Booking Item Id",
+      "userId": "User Id",
+      "customerEmail": "Customer Email",
+      "eventId": "Event Id",
+      "eventTitle": "Event Title",
+      "ticketTypeId": "Ticket Type Id",
+      "ticketTypeName": "Ticket Type Name",
+      "ticketCode": "Ticket Code",
+      "qrPayload": "Qr Payload",
+      "status": "Status",
+      "issuedAt": "Issued At",
+      "checkedInAt": "Checked In At",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "checkinLogs": "Checkin Logs"
+    }
+  },
+  "ticketServiceApp": {
+    "ticketServiceTicket": {
+      "created": "A new Ticket is created with identifier {{ param }}",
+      "updated": "A Ticket is updated with identifier {{ param }}",
+      "deleted": "A Ticket is deleted with identifier {{ param }}"
+    }
+  }
+}

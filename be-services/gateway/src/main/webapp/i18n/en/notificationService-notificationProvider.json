@@ -1,0 +1,9 @@
+{
+  "gatewayApp": {
+    "NotificationProvider": {
+      "null": "",
+      "SENDGRID": "SENDGRID",
+      "GMAIL_SMTP": "GMAIL_SMTP"
+    }
+  }
+}

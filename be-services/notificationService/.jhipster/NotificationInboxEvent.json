@@ -1,0 +1,61 @@
+{
+  "annotations": {
+    "changelogDate": "20260606053245"
+  },
+  "applications": ["gateway", "notificationService"],
+  "clientRootFolder": "notificationService",
+  "databaseType": "sql",
+  "documentation": "Inbox Events for Notification Service\\nNhận: TicketIssued",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "sourceService",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "eventId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "eventType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "payload",
+      "fieldType": "TextBlob",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "EventProcessStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "RECEIVED,PROCESSED,FAILED"
+    },
+    {
+      "fieldName": "receivedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "processedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "errorMessage",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    }
+  ],
+  "microserviceName": "notificationService",
+  "name": "NotificationInboxEvent",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

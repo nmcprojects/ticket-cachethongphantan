@@ -1,0 +1,34 @@
+{
+  "gatewayApp": {
+    "ticketServiceCheckinLog": {
+      "home": {
+        "title": "Checkin Logs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Checkin Log",
+        "createOrEditLabel": "Create or edit a Checkin Log",
+        "notFound": "No Checkin Logs found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Checkin Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Checkin Log"
+      },
+      "id": "ID",
+      "ticketCode": "Ticket Code",
+      "staffId": "Staff Id",
+      "eventId": "Event Id",
+      "result": "Result",
+      "message": "Message",
+      "checkedInAt": "Checked In At",
+      "ticket": "Ticket"
+    }
+  },
+  "ticketServiceApp": {
+    "ticketServiceCheckinLog": {
+      "created": "A new Checkin Log is created with identifier {{ param }}",
+      "updated": "A Checkin Log is updated with identifier {{ param }}",
+      "deleted": "A Checkin Log is deleted with identifier {{ param }}"
+    }
+  }
+}

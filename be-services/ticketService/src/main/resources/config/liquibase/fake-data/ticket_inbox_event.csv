@@ -1,0 +1,11 @@
+id;source_service;event_id;event_type;payload;status;received_at;processed_at;error_message
+1;for so;lender;table;../fake-data/blob/hipster.txt;RECEIVED;2026-06-05T21:45:09;2026-06-05T10:47:53;circumference
+2;as poorly;vicinity denitrify;rust;../fake-data/blob/hipster.txt;FAILED;2026-06-06T05:13:22;2026-06-05T11:41:53;swelter instead
+3;as while colorfully;acidic mysteriously rusty;oof below horde;../fake-data/blob/hipster.txt;PROCESSED;2026-06-06T04:52:46;2026-06-05T08:28:14;mom
+4;dutiful while;hence;an avow;../fake-data/blob/hipster.txt;FAILED;2026-06-06T00:58:55;2026-06-05T12:21:40;throughout fiercely
+5;um ferociously atrium;enchanted;farm;../fake-data/blob/hipster.txt;FAILED;2026-06-05T07:49:08;2026-06-05T18:50:30;besides aha past
+6;into mmm;repeatedly;while wide;../fake-data/blob/hipster.txt;PROCESSED;2026-06-05T09:46:33;2026-06-05T16:48:51;low urgently merrily
+7;hello solemnly;gosh opposite vaguely;claw;../fake-data/blob/hipster.txt;FAILED;2026-06-06T03:19:42;2026-06-05T08:09:22;afraid verbally though
+8;trash of;opposite premeditation;marathon;../fake-data/blob/hipster.txt;FAILED;2026-06-05T07:22:00;2026-06-06T03:56:58;throughout
+9;ack oh foodstuffs;consequently sleepily;upward;../fake-data/blob/hipster.txt;PROCESSED;2026-06-05T17:20:38;2026-06-05T19:52:09;huzzah faraway
+10;lazy mmm apud;sweetly more meanwhile;fooey but;../fake-data/blob/hipster.txt;FAILED;2026-06-06T03:41:18;2026-06-05T15:37:04;between

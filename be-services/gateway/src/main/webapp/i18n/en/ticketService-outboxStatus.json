@@ -1,0 +1,10 @@
+{
+  "gatewayApp": {
+    "OutboxStatus": {
+      "null": "",
+      "PENDING": "PENDING",
+      "PUBLISHED": "PUBLISHED",
+      "FAILED": "FAILED"
+    }
+  }
+}

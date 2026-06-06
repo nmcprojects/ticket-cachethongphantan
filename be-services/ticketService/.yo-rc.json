@@ -1,0 +1,27 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 4,
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "ticketService",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": true,
+    "entities": ["Ticket", "CheckinLog", "TicketInboxEvent", "TicketOutboxEvent"],
+    "gatewayServerPort": "9000",
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "MzdhNjUxZGNkOTdlMzI2MTkyMjIyNWY0NTQwZGEyMGIxYmI0ZDQyNGNiYTQwODA2NzhhYWYzYzhlOWU4Y2IzYzY1MTBiNWNlYWI4ODgwZDM1NjliMzFmMmRmNWVlNWNhNGJkN2U3OGRkMjAwMDdiZWU5MzZlNjM5OTE2MWQ0MjA=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1780724025000,
+    "nativeLanguage": "en",
+    "packageName": "com.ticketbooking.ticket",
+    "prodDatabaseType": "mysql",
+    "serverPort": "9005",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

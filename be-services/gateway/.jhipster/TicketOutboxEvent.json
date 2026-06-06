@@ -1,0 +1,61 @@
+{
+  "annotations": {
+    "changelogDate": "20260606054647"
+  },
+  "applications": ["gateway", "ticketService"],
+  "clientRootFolder": "ticketService",
+  "databaseType": "sql",
+  "documentation": "Outbox Events for Ticket Service\\nPublish: TicketIssued, TicketCheckedIn",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "aggregateType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "aggregateId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "eventType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "payload",
+      "fieldType": "TextBlob",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OutboxStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDING,PUBLISHED,FAILED"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "publishedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "errorMessage",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    }
+  ],
+  "microserviceName": "ticketService",
+  "name": "TicketOutboxEvent",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

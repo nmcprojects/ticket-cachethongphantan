@@ -1,0 +1,27 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 3,
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "paymentService",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": true,
+    "entities": ["Payment", "PaymentAttempt", "PaymentWebhookLog", "PaymentOutboxEvent"],
+    "gatewayServerPort": "9000",
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "NTJlOGNkZmQyNDhjNGY1MzYzYzQzY2VhYWQyMWUwMjE1MzBkZTYyMGMwNmNkZjIyZTY4YmNiMWE4MzRkOGQ1OTNkMzkxZGVhM2EzOWYxYTAzZmY0ZjZjZDA4MmE5ZjhlMzkzYWQ2YTc5MTMyOTlmOWIyZTEwOWE0YjU4NzY4MmM=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1780724025000,
+    "nativeLanguage": "en",
+    "packageName": "com.ticketbooking.payment",
+    "prodDatabaseType": "mysql",
+    "serverPort": "9004",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

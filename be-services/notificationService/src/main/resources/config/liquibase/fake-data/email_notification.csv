@@ -1,0 +1,11 @@
+id;user_id;booking_id;recipient_email;subject;content;provider;status;provider_message_id;error_message;sent_at;created_at;updated_at
+1;20519;31006;achieve than tinted;unaccountably;../fake-data/blob/hipster.txt;GMAIL_SMTP;PENDING;confusion slowly of;for busy;2026-06-05T18:26:21;2026-06-06T02:27:11;2026-06-05T21:49:26
+2;20483;2028;immediately spirited inasmuch;platter carelessly deserted;../fake-data/blob/hipster.txt;GMAIL_SMTP;FAILED;yuck haze cap;nervously frightfully boo;2026-06-05T13:03:46;2026-06-06T02:51:02;2026-06-06T02:03:55
+3;15793;10978;or scuttle which;cautiously who;../fake-data/blob/hipster.txt;GMAIL_SMTP;SENT;hence;tarragon grim instead;2026-06-05T23:46:53;2026-06-05T23:42:08;2026-06-06T01:25:45
+4;10661;5200;sour uncommon perfection;collaboration round joyously;../fake-data/blob/hipster.txt;SENDGRID;PENDING;shout during guidance;on dark er;2026-06-05T17:22:10;2026-06-06T04:32:59;2026-06-05T09:04:46
+5;25184;15813;so sheathe although;gently above;../fake-data/blob/hipster.txt;GMAIL_SMTP;SENT;neck;carelessly;2026-06-05T10:22:46;2026-06-06T03:16:54;2026-06-05T13:37:26
+6;7192;5336;despite blah frizzy;rag fondly;../fake-data/blob/hipster.txt;GMAIL_SMTP;PENDING;absent demob;huzzah;2026-06-05T10:12:05;2026-06-05T17:45:28;2026-06-05T11:08:57
+7;11043;27928;publicity;drat critical;../fake-data/blob/hipster.txt;SENDGRID;SENT;pillbox;back;2026-06-05T20:59:38;2026-06-05T17:46:15;2026-06-06T00:37:29
+8;11410;6771;boring unbearably loudly;common pro severe;../fake-data/blob/hipster.txt;GMAIL_SMTP;SENT;rebuke;favorable;2026-06-05T08:13:01;2026-06-05T15:34:20;2026-06-05T05:53:26
+9;19913;24261;excepting;reword cleverly boohoo;../fake-data/blob/hipster.txt;SENDGRID;SENT;anenst psst when;custody grandpa what;2026-06-06T01:11:58;2026-06-05T14:05:56;2026-06-05T08:33:34
+10;11290;6642;hurtful however;eggplant alb;../fake-data/blob/hipster.txt;GMAIL_SMTP;SENT;inasmuch evenly unlike;masquerade defendant;2026-06-05T07:52:05;2026-06-05T15:27:10;2026-06-05T06:53:56

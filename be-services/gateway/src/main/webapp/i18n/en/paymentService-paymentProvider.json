@@ -1,0 +1,9 @@
+{
+  "gatewayApp": {
+    "PaymentProvider": {
+      "null": "",
+      "STRIPE": "STRIPE",
+      "VNPAY": "VNPAY"
+    }
+  }
+}

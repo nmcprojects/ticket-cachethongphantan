@@ -1,0 +1,35 @@
+{
+  "gatewayApp": {
+    "paymentServicePaymentOutboxEvent": {
+      "home": {
+        "title": "Payment Outbox Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Payment Outbox Event",
+        "createOrEditLabel": "Create or edit a Payment Outbox Event",
+        "notFound": "No Payment Outbox Events found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Payment Outbox Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Outbox Event"
+      },
+      "id": "ID",
+      "aggregateType": "Aggregate Type",
+      "aggregateId": "Aggregate Id",
+      "eventType": "Event Type",
+      "payload": "Payload",
+      "status": "Status",
+      "createdAt": "Created At",
+      "publishedAt": "Published At",
+      "errorMessage": "Error Message"
+    }
+  },
+  "paymentServiceApp": {
+    "paymentServicePaymentOutboxEvent": {
+      "created": "A new Payment Outbox Event is created with identifier {{ param }}",
+      "updated": "A Payment Outbox Event is updated with identifier {{ param }}",
+      "deleted": "A Payment Outbox Event is deleted with identifier {{ param }}"
+    }
+  }
+}

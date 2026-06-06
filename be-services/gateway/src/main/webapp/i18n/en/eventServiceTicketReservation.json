@@ -1,0 +1,35 @@
+{
+  "gatewayApp": {
+    "eventServiceTicketReservation": {
+      "home": {
+        "title": "Ticket Reservations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ticket Reservation",
+        "createOrEditLabel": "Create or edit a Ticket Reservation",
+        "notFound": "No Ticket Reservations found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Ticket Reservation {{ id }}?"
+      },
+      "detail": {
+        "title": "Ticket Reservation"
+      },
+      "id": "ID",
+      "bookingId": "Booking Id",
+      "userId": "User Id",
+      "quantity": "Quantity",
+      "status": "Status",
+      "expiresAt": "Expires At",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "ticketType": "Ticket Type"
+    }
+  },
+  "eventServiceApp": {
+    "eventServiceTicketReservation": {
+      "created": "A new Ticket Reservation is created with identifier {{ param }}",
+      "updated": "A Ticket Reservation is updated with identifier {{ param }}",
+      "deleted": "A Ticket Reservation is deleted with identifier {{ param }}"
+    }
+  }
+}

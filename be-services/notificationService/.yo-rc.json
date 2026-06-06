@@ -1,0 +1,27 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 5,
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "notificationService",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": true,
+    "entities": ["EmailNotification", "EmailNotificationItem", "NotificationInboxEvent"],
+    "gatewayServerPort": "9000",
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "ZWY4MmVhOGZkNWIzYzcwMGU2MmE4NDUwZDNkNmY3NzQ1OWE0NGM1Mzc5ZGU4MGU4MTQ3ZGZkNGM4NzBjMjhjY2M1NDU5MTZjZTQ0MWZkNDc3MzlkN2M5MjcwNzY2Yzc3MjkyNDY2MjM2NzNiNmZjYWM4YjNlMmMxNzMzNDg5Mjg=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1780723965000,
+    "nativeLanguage": "en",
+    "packageName": "com.ticketbooking.notification",
+    "prodDatabaseType": "mysql",
+    "serverPort": "9006",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

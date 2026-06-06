@@ -1,0 +1,35 @@
+{
+  "gatewayApp": {
+    "bookingServiceBookingOutboxEvent": {
+      "home": {
+        "title": "Booking Outbox Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Booking Outbox Event",
+        "createOrEditLabel": "Create or edit a Booking Outbox Event",
+        "notFound": "No Booking Outbox Events found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Booking Outbox Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Booking Outbox Event"
+      },
+      "id": "ID",
+      "aggregateType": "Aggregate Type",
+      "aggregateId": "Aggregate Id",
+      "eventType": "Event Type",
+      "payload": "Payload",
+      "status": "Status",
+      "createdAt": "Created At",
+      "publishedAt": "Published At",
+      "errorMessage": "Error Message"
+    }
+  },
+  "bookingServiceApp": {
+    "bookingServiceBookingOutboxEvent": {
+      "created": "A new Booking Outbox Event is created with identifier {{ param }}",
+      "updated": "A Booking Outbox Event is updated with identifier {{ param }}",
+      "deleted": "A Booking Outbox Event is deleted with identifier {{ param }}"
+    }
+  }
+}

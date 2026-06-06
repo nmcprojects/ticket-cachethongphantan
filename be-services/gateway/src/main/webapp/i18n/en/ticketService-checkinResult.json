@@ -1,0 +1,11 @@
+{
+  "gatewayApp": {
+    "CheckinResult": {
+      "null": "",
+      "VALID": "VALID",
+      "ALREADY_CHECKED_IN": "ALREADY_CHECKED_IN",
+      "INVALID_TICKET": "INVALID_TICKET",
+      "CANCELLED_TICKET": "CANCELLED_TICKET"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 0,
+    "applicationType": "gateway",
+    "applications": {
+      "bookingService": {
+        "applicationIndex": 2,
+        "serverPort": "9003"
+      },
+      "eventService": {
+        "applicationIndex": 1,
+        "serverPort": "9002"
+      },
+      "notificationService": {
+        "applicationIndex": 5,
+        "serverPort": "9006"
+      },
+      "paymentService": {
+        "applicationIndex": 3,
+        "serverPort": "9004"
+      },
+      "ticketService": {
+        "applicationIndex": 4,
+        "serverPort": "9005"
+      }
+    },
+    "authenticationType": "jwt",
+    "baseName": "gateway",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "clientFramework": "react",
+    "devDatabaseType": "mysql",
+    "devServerPort": 9060,
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": true,
+    "entities": [
+      "OrganizerProfile",
+      "Event",
+      "TicketType",
+      "TicketReservation",
+      "Booking",
+      "BookingItem",
+      "BookingStatusHistory",
+      "BookingInboxEvent",
+      "BookingOutboxEvent",
+      "Payment",
+      "PaymentAttempt",
+      "PaymentWebhookLog",
+      "PaymentOutboxEvent",
+      "Ticket",
+      "CheckinLog",
+      "TicketInboxEvent",
+      "TicketOutboxEvent",
+      "EmailNotification",
+      "EmailNotificationItem",
+      "NotificationInboxEvent"
+    ],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "ZTQ0MjkwYzNjZTVjNTE1NzEwMDQ2N2M3ZGI0MTQwNTVmM2E2MWZiNWRhYjNhYTc4Yjg4MWEzMDE4M2MxY2QzM2M0MjAyMDBmOGI3MjBiYjM0YTEyZTRlNWQxNTNkODIxMTY2YzgzYmI3ZTU5N2Q4MTllYTIyNTMyYjBjYzM3ODY=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1780724987000,
+    "nativeLanguage": "en",
+    "packageName": "com.ticketbooking.gateway",
+    "prodDatabaseType": "mysql",
+    "reactive": true,
+    "serverPort": "9000",
+    "serviceDiscoveryType": "eureka"
+  }
+}

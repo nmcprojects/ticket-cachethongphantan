@@ -1,0 +1,11 @@
+id;provider;provider_checkout_session_id;provider_payment_id;checkout_url;status;created_at;updated_at;payment_id
+1;VNPAY;granular;interestingly;although concerning comfortable;FAILED;2026-06-05T19:34:58;2026-06-06T01:57:32;1
+2;STRIPE;deplore collaborate which;whenever how boo;emphasize psst;CANCELLED;2026-06-05T16:57:51;2026-06-05T16:29:21;2
+3;STRIPE;since vainly versus;ruddy;behind meanwhile;PENDING;2026-06-05T17:49:23;2026-06-05T13:49:11;3
+4;VNPAY;bah some;of monster ouch;motionless;CANCELLED;2026-06-05T10:08:54;2026-06-06T00:46:58;4
+5;STRIPE;uh-huh deliquesce;muddy;abaft forenenst major;SUCCESS;2026-06-05T17:23:44;2026-06-05T18:44:08;5
+6;VNPAY;concrete qua;muted pantyhose amongst;of although;PENDING;2026-06-05T22:12:12;2026-06-05T15:02:13;6
+7;STRIPE;cruelty parsnip meanwhile;until likewise stunning;whereas;FAILED;2026-06-05T23:54:54;2026-06-06T04:58:57;7
+8;STRIPE;given zany abaft;rosy;lieu astride content;FAILED;2026-06-05T23:22:33;2026-06-05T05:32:46;8
+9;VNPAY;brook;minus;ripe good urban;PENDING;2026-06-05T16:56:51;2026-06-06T00:19:02;9
+10;VNPAY;into promptly luck;clear-cut;ah ew forenenst;SUCCESS;2026-06-05T20:06:44;2026-06-05T13:46:11;10

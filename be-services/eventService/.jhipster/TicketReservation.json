@@ -1,0 +1,61 @@
+{
+  "annotations": {
+    "changelogDate": "20260606053345"
+  },
+  "applications": ["gateway", "eventService"],
+  "clientRootFolder": "eventService",
+  "databaseType": "sql",
+  "documentation": "Ticket Reservation — tạm giữ vé khi customer tạo booking\\nbooking_id is logical ref to booking_db.bookings.id\\nuser_id    is logical ref to auth_db.users.id",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "bookingId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ReservationStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "HELD,CONFIRMED,RELEASED,EXPIRED"
+    },
+    {
+      "fieldName": "expiresAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "microserviceName": "eventService",
+  "name": "TicketReservation",
+  "relationships": [
+    {
+      "otherEntityName": "ticketType",
+      "otherEntityRelationshipName": "reservations",
+      "relationshipName": "ticketType",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

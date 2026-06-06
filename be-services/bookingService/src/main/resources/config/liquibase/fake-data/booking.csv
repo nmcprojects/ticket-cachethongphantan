@@ -1,0 +1,11 @@
+id;user_id;customer_email;event_id;event_title;total_amount;currency;status;payment_id;payment_url;expired_at;paid_at;created_at;updated_at
+1;9585;lumpy when;29343;beret round considering;10932.93;provided d;EXPIRED;30276;steak;2026-06-06T02:46:57;2026-06-05T08:55:27;2026-06-05T09:28:30;2026-06-05T16:55:31
+2;12384;after;7900;frenetically inwardly;28498.37;fervently;PENDING_PAYMENT;2123;frank whoa definitive;2026-06-05T15:40:02;2026-06-05T17:39:12;2026-06-05T21:02:30;2026-06-05T10:51:56
+3;27516;section;19880;tame inasmuch geez;31421.09;promptly w;PENDING_PAYMENT;880;however;2026-06-05T16:02:43;2026-06-05T17:20:49;2026-06-05T15:47:57;2026-06-06T00:10:37
+4;1374;at;17952;bashfully;25536.31;upon altho;CANCELLED;29604;the;2026-06-05T14:57:23;2026-06-05T10:21:08;2026-06-06T00:35:15;2026-06-06T03:37:51
+5;18764;forsaken finally lampoon;5556;abnormally procrastinate;22392.71;braid yipp;PAID;25080;controvert nephew;2026-06-05T17:44:08;2026-06-05T16:34:48;2026-06-05T06:36:58;2026-06-05T13:15:25
+6;21429;finally;21603;premise forenenst;20487.63;cantaloupe;CANCELLED;25309;consequently;2026-06-05T17:08:31;2026-06-06T04:23:04;2026-06-05T16:10:36;2026-06-05T05:46:12
+7;13877;pile without up;27922;solidly;14082.11;whoa quest;PENDING_PAYMENT;13809;reassuringly feminize;2026-06-05T11:59:35;2026-06-06T03:18:23;2026-06-05T07:16:24;2026-06-06T02:35:22
+8;19303;make;27487;incidentally aside incidentally;28605.72;likewise l;PAID;30618;academics step-mother;2026-06-05T18:08:21;2026-06-06T01:06:45;2026-06-06T01:32:32;2026-06-06T03:09:09
+9;9171;but rebound pale;10403;zen;30274.68;normal pen;PENDING_PAYMENT;18820;gently;2026-06-06T03:56:30;2026-06-06T02:41:31;2026-06-05T05:41:04;2026-06-05T20:24:25
+10;17291;but gah stock;26809;writhing informal;28330.37;oh;PENDING_PAYMENT;7057;overproduce ew whereas;2026-06-05T07:25:36;2026-06-05T19:48:51;2026-06-05T12:02:08;2026-06-05T09:43:42

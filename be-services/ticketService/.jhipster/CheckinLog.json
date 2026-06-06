@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "changelogDate": "20260606053145"
+  },
+  "applications": ["gateway", "ticketService"],
+  "clientRootFolder": "ticketService",
+  "databaseType": "sql",
+  "documentation": "Checkin Log — lịch sử check-in\\nticket_id nullable (log cả lần thất bại với mã không tồn tại)\\nstaff_id  -> auth_db.users.id (logical)\\nevent_id  -> event_db.events.id (logical)",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "ticketCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "staffId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "eventId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "result",
+      "fieldType": "CheckinResult",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "VALID,ALREADY_CHECKED_IN,INVALID_TICKET,CANCELLED_TICKET"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "checkedInAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "ticketService",
+  "name": "CheckinLog",
+  "relationships": [
+    {
+      "otherEntityName": "ticket",
+      "otherEntityRelationshipName": "checkinLogs",
+      "relationshipName": "ticket",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

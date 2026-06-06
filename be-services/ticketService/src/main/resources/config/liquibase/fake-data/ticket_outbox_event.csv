@@ -1,0 +1,11 @@
+id;aggregate_type;aggregate_id;event_type;payload;status;created_at;published_at;error_message
+1;goat cruel;gladly;ack until icebreaker;../fake-data/blob/hipster.txt;PUBLISHED;2026-06-05T13:25:41;2026-06-05T08:18:49;boo pasta
+2;boo fess yum;gifted lined physically;before upsell;../fake-data/blob/hipster.txt;FAILED;2026-06-05T22:16:40;2026-06-06T05:17:52;yet
+3;regarding redraw ha;poorly;sightseeing creak;../fake-data/blob/hipster.txt;PENDING;2026-06-05T08:19:16;2026-06-05T06:12:08;unto mmm indeed
+4;dredger;antique;repentant standard;../fake-data/blob/hipster.txt;FAILED;2026-06-05T10:07:42;2026-06-05T14:48:59;brr kindly innocently
+5;weakly executor gee;valuable innocently;pilot;../fake-data/blob/hipster.txt;FAILED;2026-06-05T22:06:41;2026-06-05T14:02:03;wildly
+6;stoop following;madly pluck;limp brandish or;../fake-data/blob/hipster.txt;FAILED;2026-06-05T12:23:45;2026-06-05T12:10:47;flame
+7;unaccountably reflate joyously;receptor floodlight;impressionable gladly madly;../fake-data/blob/hipster.txt;FAILED;2026-06-05T06:48:18;2026-06-06T04:38:25;gallivant loosely
+8;magnetize besides;mad along solution;mysterious tousle finally;../fake-data/blob/hipster.txt;PUBLISHED;2026-06-05T17:34:34;2026-06-06T00:06:57;under evince but
+9;righteously;ah but;specific;../fake-data/blob/hipster.txt;PENDING;2026-06-05T12:14:42;2026-06-06T01:52:22;card holster
+10;following;hammock despite;yarmulke dock;../fake-data/blob/hipster.txt;PUBLISHED;2026-06-05T08:35:50;2026-06-05T23:56:43;alive across afore

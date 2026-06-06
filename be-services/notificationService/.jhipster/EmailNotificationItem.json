@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20260606053145"
+  },
+  "applications": ["gateway", "notificationService"],
+  "clientRootFolder": "notificationService",
+  "databaseType": "sql",
+  "documentation": "Email Notification Item — từng vé gắn trong email\\nticket_id -> ticket_db.tickets.id (logical)",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "ticketId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ticketCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "notificationService",
+  "name": "EmailNotificationItem",
+  "relationships": [
+    {
+      "otherEntityName": "emailNotification",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "notification",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

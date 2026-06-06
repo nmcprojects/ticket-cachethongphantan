@@ -1,0 +1,11 @@
+id;provider;provider_event_id;event_type;raw_payload;signature;processed;processing_error;received_at;processed_at
+1;VNPAY;aha under;worthy;../fake-data/blob/hipster.txt;aha;true;transcend;2026-06-05T19:47:45;2026-06-05T15:15:29
+2;VNPAY;enormously;meh psst rigid;../fake-data/blob/hipster.txt;pfft instead outside;true;to editor upbeat;2026-06-05T13:24:26;2026-06-05T10:46:36
+3;STRIPE;times;upwardly where lest;../fake-data/blob/hipster.txt;after than bah;true;zesty astride;2026-06-05T15:19:05;2026-06-05T21:04:30
+4;STRIPE;aw planula;recovery cautiously rarely;../fake-data/blob/hipster.txt;shrilly;false;creative;2026-06-05T21:16:01;2026-06-05T07:46:18
+5;STRIPE;bracelet;triumphantly ah whoa;../fake-data/blob/hipster.txt;but ascribe;true;ridge in-joke unto;2026-06-05T16:48:58;2026-06-05T09:27:17
+6;VNPAY;among;dimly;../fake-data/blob/hipster.txt;bouncy;true;which zowie;2026-06-05T13:18:02;2026-06-05T09:13:15
+7;STRIPE;vivid slushy provision;casket incidentally;../fake-data/blob/hipster.txt;table;false;ouch;2026-06-05T07:22:54;2026-06-05T10:55:49
+8;STRIPE;happily ha;except;../fake-data/blob/hipster.txt;behind;false;rival;2026-06-05T09:08:29;2026-06-06T00:59:53
+9;STRIPE;to;excited stay;../fake-data/blob/hipster.txt;stage hello on;true;eek;2026-06-05T14:13:43;2026-06-05T06:14:46
+10;VNPAY;daily;baptise;../fake-data/blob/hipster.txt;but loosely ugh;true;before;2026-06-05T10:26:32;2026-06-05T20:35:55

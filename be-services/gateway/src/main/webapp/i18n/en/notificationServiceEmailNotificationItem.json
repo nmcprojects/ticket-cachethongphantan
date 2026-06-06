@@ -1,0 +1,31 @@
+{
+  "gatewayApp": {
+    "notificationServiceEmailNotificationItem": {
+      "home": {
+        "title": "Email Notification Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Email Notification Item",
+        "createOrEditLabel": "Create or edit a Email Notification Item",
+        "notFound": "No Email Notification Items found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Email Notification Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Email Notification Item"
+      },
+      "id": "ID",
+      "ticketId": "Ticket Id",
+      "ticketCode": "Ticket Code",
+      "createdAt": "Created At",
+      "notification": "Notification"
+    }
+  },
+  "notificationServiceApp": {
+    "notificationServiceEmailNotificationItem": {
+      "created": "A new Email Notification Item is created with identifier {{ param }}",
+      "updated": "A Email Notification Item is updated with identifier {{ param }}",
+      "deleted": "A Email Notification Item is deleted with identifier {{ param }}"
+    }
+  }
+}

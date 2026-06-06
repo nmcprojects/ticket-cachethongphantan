@@ -1,0 +1,38 @@
+{
+  "gatewayApp": {
+    "eventServiceEvent": {
+      "home": {
+        "title": "Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Event",
+        "createOrEditLabel": "Create or edit a Event",
+        "notFound": "No Events found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Event"
+      },
+      "id": "ID",
+      "title": "Title",
+      "description": "Description",
+      "location": "Location",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "bannerUrl": "Banner Url",
+      "status": "Status",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "ticketTypes": "Ticket Types",
+      "organizer": "Organizer"
+    }
+  },
+  "eventServiceApp": {
+    "eventServiceEvent": {
+      "created": "A new Event is created with identifier {{ param }}",
+      "updated": "A Event is updated with identifier {{ param }}",
+      "deleted": "A Event is deleted with identifier {{ param }}"
+    }
+  }
+}

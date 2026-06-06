@@ -1,0 +1,10 @@
+{
+  "gatewayApp": {
+    "EventProcessStatus": {
+      "null": "",
+      "RECEIVED": "RECEIVED",
+      "PROCESSED": "PROCESSED",
+      "FAILED": "FAILED"
+    }
+  }
+}

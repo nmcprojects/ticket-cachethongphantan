@@ -1,0 +1,11 @@
+{
+  "gatewayApp": {
+    "ReservationStatus": {
+      "null": "",
+      "HELD": "HELD",
+      "CONFIRMED": "CONFIRMED",
+      "RELEASED": "RELEASED",
+      "EXPIRED": "EXPIRED"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "gatewayApp": {
+    "ticketServiceTicketInboxEvent": {
+      "home": {
+        "title": "Ticket Inbox Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ticket Inbox Event",
+        "createOrEditLabel": "Create or edit a Ticket Inbox Event",
+        "notFound": "No Ticket Inbox Events found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Ticket Inbox Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Ticket Inbox Event"
+      },
+      "id": "ID",
+      "sourceService": "Source Service",
+      "eventId": "Event Id",
+      "eventType": "Event Type",
+      "payload": "Payload",
+      "status": "Status",
+      "receivedAt": "Received At",
+      "processedAt": "Processed At",
+      "errorMessage": "Error Message"
+    }
+  },
+  "ticketServiceApp": {
+    "ticketServiceTicketInboxEvent": {
+      "created": "A new Ticket Inbox Event is created with identifier {{ param }}",
+      "updated": "A Ticket Inbox Event is updated with identifier {{ param }}",
+      "deleted": "A Ticket Inbox Event is deleted with identifier {{ param }}"
+    }
+  }
+}
