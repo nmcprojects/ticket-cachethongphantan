@@ -9,6 +9,7 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_HOST: '%'
     ports:
       - '3306:3306'
     volumes:
@@ -66,6 +67,7 @@ services:
     ports:
       - '9000:9000'
     command: java -jar /app/app.jar
+    restart: on-failure
     depends_on:
       mysql:
         condition: service_healthy
@@ -86,6 +88,7 @@ services:
     ports:
       - '9002:9002'
     command: java -jar /app/app.jar
+    restart: on-failure
     depends_on:
       mysql:
         condition: service_healthy
@@ -106,6 +109,7 @@ services:
     ports:
       - '9003:9003'
     command: java -jar /app/app.jar
+    restart: on-failure
     depends_on:
       mysql:
         condition: service_healthy
@@ -126,6 +130,7 @@ services:
     ports:
       - '9004:9004'
     command: java -jar /app/app.jar
+    restart: on-failure
     depends_on:
       mysql:
         condition: service_healthy
@@ -146,6 +151,7 @@ services:
     ports:
       - '9005:9005'
     command: java -jar /app/app.jar
+    restart: on-failure
     depends_on:
       mysql:
         condition: service_healthy
@@ -166,6 +172,7 @@ services:
     ports:
       - '9006:9006'
     command: java -jar /app/app.jar
+    restart: on-failure
     depends_on:
       mysql:
         condition: service_healthy
