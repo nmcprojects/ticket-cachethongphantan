@@ -75,18 +75,18 @@ services:
       - '9000:9000'
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - SPRING_PROFILES_ACTIVE=dev,api-docs
       - SPRING_CLOUD_CONFIG_ENABLED=false
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_INSTANCE_PREFER_IP_ADDRESS=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/gateway?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/gateway?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_R2DBC_URL=r2dbc:mysql://mysql:3306/gateway?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_R2DBC_URL=r2dbc:mysql://mysql:3306/gateway?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - SPRING_R2DBC_USERNAME=root
       - SPRING_R2DBC_PASSWORD=password
-      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/gateway?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/gateway?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=Y2UwMmU4MjZjZTQ2MDljZTA5ZTI2NGYwMGZiMjY0YmVmZTk3OGUwYTA1NjBjYjA1NmU5NzE4OWUzYmYwMDhmNWYzMGRmNzVjYzFlM2M0NDAyYjM2MmY1OWQxNjkyYTRlOTMzYTFiNmI1ZmFjYzYwZjQ3OTExZDdjZDgwZDY4NDc=
     command: java -jar /app/app.jar
     restart: on-failure
@@ -111,15 +111,15 @@ services:
       - '9002:9002'
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - SPRING_PROFILES_ACTIVE=dev,api-docs
       - SPRING_CLOUD_CONFIG_ENABLED=false
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_INSTANCE_PREFER_IP_ADDRESS=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/eventservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/eventservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/eventservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/eventservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=Y2UwMmU4MjZjZTQ2MDljZTA5ZTI2NGYwMGZiMjY0YmVmZTk3OGUwYTA1NjBjYjA1NmU5NzE4OWUzYmYwMDhmNWYzMGRmNzVjYzFlM2M0NDAyYjM2MmY1OWQxNjkyYTRlOTMzYTFiNmI1ZmFjYzYwZjQ3OTExZDdjZDgwZDY4NDc=
     command: java -jar /app/app.jar
     restart: on-failure
@@ -144,15 +144,15 @@ services:
       - '9003:9003'
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - SPRING_PROFILES_ACTIVE=dev,api-docs
       - SPRING_CLOUD_CONFIG_ENABLED=false
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_INSTANCE_PREFER_IP_ADDRESS=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/bookingservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/bookingservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/bookingservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/bookingservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=Y2UwMmU4MjZjZTQ2MDljZTA5ZTI2NGYwMGZiMjY0YmVmZTk3OGUwYTA1NjBjYjA1NmU5NzE4OWUzYmYwMDhmNWYzMGRmNzVjYzFlM2M0NDAyYjM2MmY1OWQxNjkyYTRlOTMzYTFiNmI1ZmFjYzYwZjQ3OTExZDdjZDgwZDY4NDc=
     command: java -jar /app/app.jar
     restart: on-failure
@@ -177,15 +177,15 @@ services:
       - '9004:9004'
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - SPRING_PROFILES_ACTIVE=dev,api-docs
       - SPRING_CLOUD_CONFIG_ENABLED=false
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_INSTANCE_PREFER_IP_ADDRESS=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/paymentservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/paymentservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/paymentservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/paymentservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=Y2UwMmU4MjZjZTQ2MDljZTA5ZTI2NGYwMGZiMjY0YmVmZTk3OGUwYTA1NjBjYjA1NmU5NzE4OWUzYmYwMDhmNWYzMGRmNzVjYzFlM2M0NDAyYjM2MmY1OWQxNjkyYTRlOTMzYTFiNmI1ZmFjYzYwZjQ3OTExZDdjZDgwZDY4NDc=
     command: java -jar /app/app.jar
     restart: on-failure
@@ -210,15 +210,15 @@ services:
       - '9005:9005'
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - SPRING_PROFILES_ACTIVE=dev,api-docs
       - SPRING_CLOUD_CONFIG_ENABLED=false
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_INSTANCE_PREFER_IP_ADDRESS=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/ticketservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/ticketservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/ticketservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/ticketservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=Y2UwMmU4MjZjZTQ2MDljZTA5ZTI2NGYwMGZiMjY0YmVmZTk3OGUwYTA1NjBjYjA1NmU5NzE4OWUzYmYwMDhmNWYzMGRmNzVjYzFlM2M0NDAyYjM2MmY1OWQxNjkyYTRlOTMzYTFiNmI1ZmFjYzYwZjQ3OTExZDdjZDgwZDY4NDc=
     command: java -jar /app/app.jar
     restart: on-failure
@@ -243,15 +243,15 @@ services:
       - '9006:9006'
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - SPRING_PROFILES_ACTIVE=dev,api-docs
       - SPRING_CLOUD_CONFIG_ENABLED=false
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:admin@jhipster-registry:8761/eureka/
       - EUREKA_INSTANCE_PREFER_IP_ADDRESS=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/notificationservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/notificationservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/notificationservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+      - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/notificationservice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=Y2UwMmU4MjZjZTQ2MDljZTA5ZTI2NGYwMGZiMjY0YmVmZTk3OGUwYTA1NjBjYjA1NmU5NzE4OWUzYmYwMDhmNWYzMGRmNzVjYzFlM2M0NDAyYjM2MmY1OWQxNjkyYTRlOTMzYTFiNmI1ZmFjYzYwZjQ3OTExZDdjZDgwZDY4NDc=
     command: java -jar /app/app.jar
     restart: on-failure
